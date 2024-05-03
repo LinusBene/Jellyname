@@ -114,7 +114,7 @@ int main(int argc, char * argv[]) {
     char* pattern = approvedFlag ? argv[2] : argv [1];
     char* dirTarget = approvedFlag ? argv[3] : argv [2];
 
-    if(argc != 3) {
+    if(argc < 3 || argc > 4) {
         fprintf(stderr, "Exactly two arguments are required\n");
         print_help();
     }
