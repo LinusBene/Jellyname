@@ -17,15 +17,15 @@ void print_help() {
 }
 
 int is_video_file(const char *filename) {
-    const char *video_extensions[] = {
-        ".mp4", ".avi", ".mkv", ".mov", ".wmv", ".flv", ".webm", ".m4v"
+    const char *extensions[] = {
+        ".mp4", ".avi", ".mkv", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".srt", ".nfo"
     };
-    int num_video_extensions = sizeof(video_extensions) / sizeof(video_extensions[0]);
+    int num_video_extensions = sizeof(extensions) / sizeof(extensions[0]);
 
     const char *extension = strrchr(filename, '.');
     if (extension != NULL) {
         for (int i = 0; i < num_video_extensions; ++i) {
-            if (strcasecmp(extension, video_extensions[i]) == 0) {
+            if (strcasecmp(extension, extensions[i]) == 0) {
                 return 1; 
             }
         }
